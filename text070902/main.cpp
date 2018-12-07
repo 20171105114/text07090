@@ -5,7 +5,7 @@
 #include <vector>
 #include <cstdlib>
 using namespace std;
-string Trim(string& str)
+string Trim(string& str)//去掉字符串首尾空格
 {
     str.erase(0,str.find_first_not_of(" \t\r\n"));
     str.erase(str.find_last_not_of(" \t\r\n") + 1);
@@ -55,23 +55,7 @@ int main()
             c>>a[i][j];
         }
     }
-    for(t=0;t<n;t++)
-    {
-        for (i=0;i<5-1;i++)
-        {
-            for (j=0;j<5-i-1;j++)
-            {
-                if (a[t][j]<a[t][j+1])
-                {
-                    int temp;
-                    temp=a[t][j];
-                    a[t][j]=a[t][j+1];
-                    a[t][j+1]=temp;
-                }
-            }
-        }
-    }
-    for(i=0;i<n;i++)
+        for(i=0;i<n;i++)
     {
         sum[i][i]=0;
         for(j=1;j<5-1;j++)
